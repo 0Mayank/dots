@@ -1,0 +1,11 @@
+font-size = 18
+
+theme = tokyonight
+background-opacity = 1.0
+background-blur-radius = 20
+
+macos-titlebar-style = hidden
+window-padding-x = 7
+window-padding-y = 7
+
+keybind = global:alt+,=toggle_quick_terminal

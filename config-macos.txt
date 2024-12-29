@@ -2,3 +2,7 @@ fish
 tmux
 kitty
 nvim
+skhd
+yabai
+ghostty
+karabiner
