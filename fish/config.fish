@@ -114,3 +114,22 @@ function rawdog
 
   set -gx OPENCV_LINK_LIBS "opencv_imgcodecs,opencv_imgproc,opencv_core,liblibjpeg-turbo,liblibtiff,zlib"
 end
+
+function rawerdog
+  set -gx VCPKG_C_FLAGS "-mmacosx-version-min=10.14"
+  set -gx VCPKG_CXX_FLAGS '-mmacosx-version-min=10.14'
+  set -gx VCPKG_OSX_DEPLOYMENT_TARGET '10.14'
+  set -gx MACOSX_DEPLOYMENT_TARGET '10.14'
+  set -gx VCPKG_INSTALL_ROOT "$PWD/vcpkg_installed/arm64-osx-release" 
+
+  set -gx OPENCV_LINK_PATHS "$VCPKG_INSTALL_ROOT/lib,$VCPKG_INSTALL_ROOT/lib/manual-link/opencv4_thirdparty" 
+  set -gx OPENCV_INCLUDE_PATHS "$VCPKG_INSTALL_ROOT/include" 
+  set -gx OPENCV_LINK_LIBS "opencv_core,opencv_imgcodecs,opencv_imgproc, ittnotify,libturbojpeg,liblibtiff,tegra_hal,zlib" 
+
+  set -gx TURBOJPEG_SOURCE "explicit" 
+  set -gx TURBOJPEG_LIB_DIR "$VCPKG_INSTALL_ROOT/lib" 
+
+  set -gx OPENSSL_DIR "$VCPKG_INSTALL_ROOT" 
+  set -gx OPENSSL_NO_VENDOR "true" 
+  set -g ORT_DYLIB_PATH "$PWD/lib/macos/arm64/libonnxruntime.dylib"
+end

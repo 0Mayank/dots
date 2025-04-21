@@ -3,6 +3,7 @@ tmux
 kitty
 nvim
 skhd
-yabai
 ghostty
 karabiner
+helix
+aerospace

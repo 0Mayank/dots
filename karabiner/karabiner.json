@@ -1,10 +1,31 @@
 {
+    "global": { "check_for_updates_on_startup": false },
     "profiles": [
         {
             "complex_modifications": {
                 "rules": [
                     {
+                        "description": "Map Cmd+H to Cmd+Shift+H",
+                        "manipulators": [
+                            {
+                                "description": "",
+                                "from": {
+                                    "key_code": "h",
+                                    "modifiers": { "mandatory": ["command"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "h",
+                                        "modifiers": ["command", "left_shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Exchange semicolon and colon",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {

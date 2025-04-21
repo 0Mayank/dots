@@ -1,11 +1,78 @@
-font-size = 16
+font-size = 19
 
 theme = tokyonight
 background-opacity = 1.0
 background-blur-radius = 20
 
-macos-titlebar-style = hidden
+quick-terminal-position = center
+
+macos-titlebar-style = tabs
+window-new-tab-position = end
+
+window-height = 300
+window-width = 300
 window-padding-x = 7
 window-padding-y = 7
 
-keybind = global:alt+,=toggle_quick_terminal
+
+keybind = alt+j=jump_to_prompt:-1
+keybind = alt+k=jump_to_prompt:1
+
+
+keybind = alt+,=toggle_quick_terminal
+
+
+keybind = super+n=new_tab
+keybind = super+w=close_tab
+keybind = super+o=toggle_tab_overview
+
+keybind = super+k=next_tab
+keybind = super+j=previous_tab
+
+keybind = super+m>one>l=move_tab:1
+keybind = super+m>two>l=move_tab:2
+keybind = super+m>three>l=move_tab:3
+keybind = super+m>four>l=move_tab:4
+keybind = super+m>five>l=move_tab:5
+keybind = super+m>six>l=move_tab:6
+keybind = super+m>seven>l=move_tab:7
+keybind = super+m>eight>l=move_tab:8
+keybind = super+m>nine>l=move_tab:9
+keybind = super+m>one>h=move_tab:-1
+keybind = super+m>two>h=move_tab:-2
+keybind = super+m>three>h=move_tab:-3
+keybind = super+m>four>h=move_tab:-4
+keybind = super+m>five>h=move_tab:-5
+keybind = super+m>six>h=move_tab:-6
+keybind = super+m>seven>h=move_tab:-7
+keybind = super+m>eight>h=move_tab:-8
+keybind = super+m>nine>h=move_tab:-9
+
+keybind = super+one=goto_tab:1
+keybind = super+two=goto_tab:2
+keybind = super+three=goto_tab:3
+keybind = super+four=goto_tab:4
+keybind = super+five=goto_tab:5
+keybind = super+six=goto_tab:6
+keybind = super+seven=goto_tab:7
+keybind = super+eight=goto_tab:8
+keybind = super+nine=goto_tab:9
+
+
+keybind = alt+w=close_surface
+keybind = alt+control+f=toggle_split_zoom
+
+keybind = alt+left_bracket=new_split:down
+keybind = alt+right_bracket=new_split:right
+keybind = alt+backslash=new_split:auto
+
+keybind = alt+control+h=goto_split:left
+keybind = alt+control+j=goto_split:down
+keybind = alt+control+k=goto_split:up
+keybind = alt+control+l=goto_split:right
+
+keybind = alt+shift+control+equal=equalize_splits
+keybind = alt+shift+control+h=resize_split:left,10
+keybind = alt+shift+control+j=resize_split:down,10
+keybind = alt+shift+control+k=resize_split:up,10
+keybind = alt+shift+control+l=resize_split:right,10
