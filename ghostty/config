@@ -1,7 +1,10 @@
-font-size = 19
+# font-family = "JetBrainsMonoNL Nerd Font Mono"
+font-size = 16
 
-theme = tokyonight
-background-opacity = 1.0
+# theme = "Dark Modern"
+theme = "Monokai Remastered"
+# theme = "Tomorrow Night Burns"
+background-opacity = 0.8
 background-blur-radius = 20
 
 quick-terminal-position = center
