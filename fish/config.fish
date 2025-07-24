@@ -1,5 +1,5 @@
 zoxide init fish | source
-atuin init fish --disable-up-arrow | source
+# atuin init fish --disable-up-arrow | source
 starship init fish | source
 direnv hook fish | source
 
@@ -76,10 +76,10 @@ function su
 end
 
 # Changing ls to eza
-alias ls="eza -la --color=always --group-directories-first --icons"
+alias ls="eza -a --color=always --group-directories-first --icons"
 alias lt="eza -aT --color=always --group-directories-first --icons"
 alias ll="eza -l --color=always --group-directories-first --icons"
-alias la="eza -a --color=always --group-directories-first --icons"
+alias la="eza -la --color=always --group-directories-first --icons"
 
 # Confirm before overwriting
 alias cp="cp -i"
