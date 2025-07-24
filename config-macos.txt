@@ -7,3 +7,5 @@ ghostty
 karabiner
 helix
 aerospace
+sqlfluff
+.gitconfig -h

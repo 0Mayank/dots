@@ -36,7 +36,7 @@ echo "---------------------------------------------------"
 create_symlink() {
     local source="$1"
     local target="$2"
-    
+
     # Check if target already exists
     if [ -e "$target" ]; then
         if [ -L "$target" ]; then
@@ -44,17 +44,17 @@ create_symlink() {
             return
         else
             echo "⚠️  File/directory already exists: $target"
-	    echo -n "Do you want to backup and replace it? (y/n): "
-	    read  -n 1 -p "Input Selection:" ans < /dev/tty
-	    if [[ $ans =~ ^[Yy]$ ]]; then
-		mv "$target" "${target}.backup"
-		echo "Created backup: ${target}.backup"
-	    else
-		echo "Skipping: $target"
-		return
-	    fi	
-	fi
-    fi 
+            echo -n "Do you want to backup and replace it? (y/n): "
+            read  -n 1 -p "Input Selection:" ans < /dev/tty
+            if [[ $ans =~ ^[Yy]$ ]]; then
+                mv "$target" "${target}.backup"
+                echo "Created backup: ${target}.backup"
+            else
+                echo "Skipping: $target"
+                return
+            fi
+        fi
+    fi
     # Create the symlink
     ln -s "$source" "$target"
     echo "✅ Created symlink: $target -> $source"
@@ -64,19 +64,27 @@ create_symlink() {
 while IFS= read -r item || [ -n "$item" ]; do
     # Skip empty lines and comments
     [[ -z "$item" || "$item" =~ ^[[:space:]]*# ]] && continue
-    
+
     # Remove any leading/trailing whitespace
     item=$(echo "$item" | xargs)
-    
-    source="$DOTFILES_DIR/$item"
-    target="$CONFIG_DIR/$item"
-    
+
+    items=($item)
+
+    path=${items[0]}
+    arg=${items[1]}
+    source="$DOTFILES_DIR/$path"
+    if [[ $arg == "-h" ]]; then
+        target="$HOME/$path"
+    else
+        target="$CONFIG_DIR/$path"
+    fi
+
     # Check if the source exists
     if [ ! -e "$source" ]; then
         echo "❌ Error: Source does not exist: $source"
         continue
     fi
-    
+
     create_symlink "$source" "$target"
 done < "$CONFIG_LIST"
 
